@@ -1,0 +1,213 @@
+/* --- Professional CSS Makeover --- */
+
+/* Tip: CSS variable gulo use korar karone design-er consistency thake
+   ebong pore update kora khub shohoj hoy.
+*/
+:root {
+    --primary-color: #4f46e5; /* Ekti modern, professional indigo color */
+    --primary-hover-color: #4338ca;
+    --danger-color: #ef4444;
+    --danger-hover-color: #dc2626;
+    --secondary-color: #6b7280;
+    --secondary-hover-color: #4b5563;
+    
+    --background-color: #f8fafc; /* Khub halka, clean ekta gray color */
+    --surface-color: #ffffff;    /* Card, form, ityadir jonno */
+    --border-color: #e5e7eb;
+    
+    --text-primary: #111827;     /* Pradhan text-er jonno kalo gray */
+    --text-secondary: #4b5563;  /* Subtitle, label-er jonno halka gray */
+    --text-on-primary: #ffffff; /* Rongin button-er upor shada text */
+
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+    --border-radius: 0.5rem; /* 8px */
+}
+
+/* --- General Body & Typography --- */
+body {
+    font-family: var(--font-sans);
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    margin: 0;
+    -webkit-font-smoothing: antialiased; /* Text-ke aro smooth dekhay */
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h2 {
+    text-align: center;
+    color: var(--text-primary);
+    margin-bottom: 2rem; /* Ektu beshi spacing */
+    font-weight: 600;
+}
+
+/* --- Layout Containers --- */
+.container, .form-container {
+    max-width: 800px;
+    margin: 30px auto; /* Upor-nich margin komano hoyeche */
+    padding: 1.5rem; /* Padding komano hoyeche */
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+}
+
+.form-container {
+    max-width: 700px; /* Form-ke aro choura kora hoyeche faka jayga komate */
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    background-color: var(--surface-color);
+    padding: 1rem 2.5rem;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar-brand {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.navbar-links a, .navbar-links span, .navbar div > a {
+    margin-left: 1.25rem; /* 20px */
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: color 0.2s ease-in-out; /* Hover korle smooth color transition */
+}
+
+.navbar-links a:hover, .navbar div > a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Form Styling --- */
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 0.875rem; /* 14px */
+    color: var(--text-secondary);
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="email"],
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem; /* Bhalo padding */
+    border: 1px solid var(--border-color);
+    border-radius: 0.375rem; /* 6px */
+    box-sizing: border-box;
+    background-color: #fff;
+    color: var(--text-primary);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease; /* Focus-er jonno smooth transition */
+}
+
+/* User jokhon kono form field-e click korbe tar style */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgb(79 70 229 / 0.2); /* Ekti halka glow effect */
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* --- Buttons --- */
+.btn, button.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--text-on-primary);
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1rem; /* 16px */
+    font-weight: 600;
+    font-family: var(--font-sans); /* Button-e shothik font use kora */
+    /* Hover effect-er jonno smooth transition */
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    background-color: var(--primary-hover-color);
+    transform: translateY(-2px); /* Hover korle halka upore uthbe */
+    box-shadow: var(--shadow-md);
+}
+
+.btn:active {
+    transform: translateY(-1px); /* Click korar effect */
+}
+
+/* Ek-i container-e pasapashi button-er moddhe space toiri kore */
+.btn + .btn {
+    margin-left: 0.75rem;
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+}
+.btn-danger:hover {
+    background-color: var(--danger-hover-color);
+}
+.btn-secondary {
+    background-color: var(--secondary-color);
+}
+.btn-secondary:hover {
+    background-color: var(--secondary-hover-color);
+}
+
+/* --- Alerts --- */
+.alert {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid transparent;
+    border-radius: 0.375rem;
+    font-weight: 500;
+}
+
+.alert-danger {
+    color: #991b1b;
+    background-color: #fee2e2;
+    border-color: #fecaca;
+}
+
+.alert-info {
+    color: #1e40af;
+    background-color: #dbeafe;
+    border-color: #bfdbfe;
+    text-align: center;
+}
+
+/* --- Custom Views --- */
+.biodata-view, .biodata-full-view {
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+.biodata-view a, .biodata-full-view a {
+    margin-right: 10px;
+    margin-top: 20px;
+}
