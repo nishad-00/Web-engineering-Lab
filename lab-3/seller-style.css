@@ -1,0 +1,207 @@
+/* General Body Styles */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(120deg, #F85606, #FF7F32);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Reusable Container */
+.seller-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Seller Header Styles */
+.seller-header {
+    background-color: white;
+    padding: 15px 0;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.seller-header .seller-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.seller-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+}
+
+.seller-logo img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.seller-logo span {
+    font-size: 20px;
+    font-weight: 500;
+    border-left: 1px solid #ddd;
+    padding-left: 10px;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.language-selector {
+    cursor: pointer;
+}
+
+.language-selector i {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.help-button {
+    border: 1px solid #ddd;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+.help-button:hover {
+    background-color: #f5f5f5;
+}
+
+/* Main Content Styles */
+.main-content {
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
+    gap: 50px;
+}
+
+.left-panel {
+    flex: 1;
+}
+
+.left-panel h1 {
+    font-size: 52px;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.left-panel p {
+    font-size: 18px;
+    max-width: 450px;
+}
+
+.graphics {
+    margin-top: 50px;
+    opacity: 0.2;
+}
+.graphics i {
+    margin-right: 30px;
+}
+
+.right-panel {
+    flex: 1;
+    max-width: 400px;
+}
+
+.login-card {
+    background-color: white;
+    color: #333;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.login-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* Important for padding */
+}
+
+.password-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    cursor: pointer;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background-color: #F85606;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #d94400;
+}
+
+.terms-text {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.5;
+    margin-top: 15px;
+}
+
+.terms-text a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.extra-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.extra-links a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.signup-link {
+    background-color: rgba(255, 255, 255, 0.1);
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.signup-link a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}

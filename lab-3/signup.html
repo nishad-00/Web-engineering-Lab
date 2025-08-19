@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <style>
+        /* General Styling */
+        :root {
+            --primary-orange: #f57c00;
+            --primary-blue: #1e88e5;
+            --text-primary: #333;
+            --text-secondary: #757575;
+            --border-color: #e0e0e0;
+            --background-light: #fafafa;
+            --background-white: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f4f5f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: var(--text-primary);
+        }
+
+        /* Sign Up Container */
+        .signup-container {
+            background-color: var(--background-white);
+            padding: 32px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Header */
+        .signup-header {
+            margin-bottom: 24px;
+        }
+
+        .signup-header h2 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        /* Phone Input Group */
+        .phone-input-group {
+            display: flex;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+
+        .phone-input-group:focus-within {
+             border-color: var(--primary-orange);
+             box-shadow: 0 0 0 2px rgba(245, 124, 0, 0.2);
+        }
+
+        .country-code {
+            padding: 12px;
+            background-color: var(--background-light);
+            border-right: 1px solid var(--border-color);
+            font-weight: 500;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+        }
+
+        .phone-input-group input {
+            flex-grow: 1;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .phone-input-group input::placeholder {
+            color: #bdbdbd;
+        }
+
+        /* Terms Agreement */
+        .terms-agreement {
+            display: flex;
+            align-items: flex-start;
+            text-align: left;
+            margin-bottom: 20px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .terms-agreement input[type="checkbox"] {
+            margin-top: 2px;
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+
+        .terms-agreement a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .terms-agreement a:hover {
+            text-decoration: underline;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            width: 100%;
+            background-color: var(--primary-orange);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #fb8c00;
+        }
+
+        .submit-btn .icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Login Prompt */
+        .login-prompt {
+            margin-top: 16px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .login-prompt a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .login-prompt a:hover {
+            text-decoration: underline;
+        }
+
+        /* Divider */
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 13px;
+            margin: 24px 0;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .divider:not(:empty)::before {
+            margin-right: .5em;
+        }
+
+        .divider:not(:empty)::after {
+            margin-left: .5em;
+        }
+
+        /* Social Logins */
+        .social-logins {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .social-btn .icon {
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="signup-container">
+        <div class="signup-header">
+            <h2>Sign up</h2>
+            <button class="close-btn" aria-label="Close">&times;</button>
+        </div>
+
+        <form>
+            <div class="phone-input-group">
+                <span class="country-code">BD+880</span>
+                <input type="tel" placeholder="Please enter your phone number" required>
+            </div>
+            <div class="terms-agreement">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">
+                    By creating and/or using your account, you agree to our
+                    <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.
+                </label>
+            </div>
+            <button type="submit" class="submit-btn">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"></path></svg>
+                Send code via SMS
+            </button>
+        </form>
+
+        <p class="login-prompt">
+            Already have an account? <a href="#">Log in Now</a>
+        </p>
+
+        <div class="divider">Or, sign up with</div>
+
+        <div class="social-logins">
+            <a href="#" class="social-btn">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8c-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4C12.955 4 4 12.955 4 24s8.955 20 20 20s20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"></path><path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4C16.318 4 9.656 8.337 6.306 14.691z"></path><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238C29.211 35.091 26.715 36 24 36c-5.223 0-9.657-3.657-11.303-8.579l-6.571 4.819C9.656 39.663 16.318 44 24 44z"></path><path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571l6.19 5.238C39.702 35.636 44 29.865 44 24c0-1.341-.138-2.65-.389-3.917z"></path></svg>
+                Google
+            </a>
+            <a href="#" class="social-btn">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1877F2"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-1.5c-1.38 0-1.5.62-1.5 1.4V12h3l-.5 3h-2.5v6.8c4.56-.93 8-4.96 8-9.8z"></path></svg>
+                Facebook
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
